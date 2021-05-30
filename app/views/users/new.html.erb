@@ -1,0 +1,26 @@
+<h1> Sign Up Here: </h1>
+
+<%= form_with model: @user do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    <%= f.label :bio %>
+    <%= f.text_area :bio, size: "70x6" %>
+    <%= f.label :weight %>
+    <%= f.number_field :weight %>
+    <%= f.label :height %>
+    <%= f.number_field :height %>
+    <%= f.label :goal %>
+    <%= f.select :goal, ["Weight Loss", "Weight Gain", "Build Muscle"] %>
+    <%= f.submit 'Sign Up' %>
+<% end %>
+
+    
+    
