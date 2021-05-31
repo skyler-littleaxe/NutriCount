@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
 
     def new
-        @user = User.new
+        if !logged_in?
+            @user = User.new
+        else
+            flash[:message] = "Invalid credentials. Please try again."
+            redirect_to user_path
+        end
+
     end
 
     def create
