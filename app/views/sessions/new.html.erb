@@ -1,0 +1,11 @@
+<h1> Log In Here: </h1>
+
+<%= form_with model: @user do |f| %>
+    <ul>
+    <li><%= f.label :username %>
+    <%= f.text_field :username %></li>
+    <li><%= f.label :password %>
+    <%= f.password_field :password %></li>
+    </ul>
+    <%= f.submit 'Log In' %>
+<% end %>
