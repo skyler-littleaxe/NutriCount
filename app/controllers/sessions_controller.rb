@@ -17,10 +17,27 @@ class SessionsController < ApplicationController
         end
     end
 
+    def omniauth
+        user = User.create_from_omniauth(auth)
+        if user.valid?
+            session[:user_id] = user.id
+            redirect_to new_shoe_path
+        else
+            flash[:message] = user.errors.full_messages.join(", ")
+            redirect_to shoes_path
+        end
+    end
+
 
     def destroy
         session.delete(:user_id)
         redirect_to root_path
+    end
+
+    private
+
+    def auth
+        request.env['omniauth.auth']
     end
 
 end
