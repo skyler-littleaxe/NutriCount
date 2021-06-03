@@ -1,11 +1,15 @@
 <h2>Your Profile</h2>
 
 <body>
-Username: <%= @user.username %> <br>
-Name: <%= @user.first_name %> <%= @user.last_name %> <br>
-Username: <%= @user.height %> <br>
-Username: <%= @user.weight %> <br>
-Username: <%= @user.lifestyle %> <br>
-Username: <%= @user.bio %> <br>
+Username: <%= @current_user.username %> <br>
+Name: <%= @current_user.last.name %>, <%= @current_user.first.name %> <br>
+Username: <%= @current_user.height %> <br>
+Username: <%= @current_user.weight %> <br>
+Username: <%= @current_user.lifestyle %> <br>
+Username: <%= @current_user.bio %> <br>
+<p>
+<%= link_to "Edit Profile", edit_user_path(@current_user) %>
+<%= link_to "Update Username/Password", edit_credentials_path(@current_user) %>
+</p>
 </body>
 
