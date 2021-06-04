@@ -2,11 +2,12 @@
 
 <body>
 Username: <%= @current_user.username %> <br>
-Name: <%= @current_user.last.name %>, <%= @current_user.first.name %> <br>
-Username: <%= @current_user.height %> <br>
-Username: <%= @current_user.weight %> <br>
-Username: <%= @current_user.lifestyle %> <br>
-Username: <%= @current_user.bio %> <br>
+Name: <%= @current_user.last_name %>, <%= @current_user.first_name %> <br>
+Height: <%= @current_user.height %> <br>
+Weight: <%= @current_user.weight %> <br>
+Lifestyle: <%= @current_user.lifestyle %> <br>
+Lifestyle: <%= @current_user.goal %> <br>
+Bio: <%= @current_user.bio %> <br>
 <p>
 <%= link_to "Edit Profile", edit_user_path(@current_user) %>
 <%= link_to "Update Username/Password", edit_credentials_path(@current_user) %>
