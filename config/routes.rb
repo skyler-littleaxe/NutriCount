@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :meals
+  resources :logs
   root to: 'home#welcome'
   get 'home/welcome'
   get '/signup', to: 'users#new'
