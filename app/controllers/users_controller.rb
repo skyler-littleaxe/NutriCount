@@ -5,8 +5,8 @@ class UsersController < ApplicationController
         if !logged_in?
             @user = User.new
         else
-            flash[:message] = "Invalid credentials. Please try again."
-            redirect_to user_path
+            flash[:message] = "You are already logged in."
+            redirect_to user_path(@current_user)
         end
 
     end

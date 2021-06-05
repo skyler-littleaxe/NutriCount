@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :meals
-  resources :logs
+
   root to: 'home#welcome'
   get 'home/welcome'
   get '/signup', to: 'users#new'
@@ -13,5 +12,7 @@ Rails.application.routes.draw do
   put '/users/:id/credentials', to: 'user#update_credentials'
   patch '/users/:id/credentials', to: 'user#update_credentials'
   resources :users
+  resources :meals
+  resources :logs
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
