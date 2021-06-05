@@ -4,7 +4,7 @@ class CreateMeals < ActiveRecord::Migration[6.1]
       t.string :meal_type
       t.string :meal_name
       t.integer :cal_amount
-      t.integer :protien_amount
+      t.integer :protein_amount
       t.integer :carb_amount
       t.integer :fat_amount
       t.integer :water_amount
