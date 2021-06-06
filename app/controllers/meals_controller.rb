@@ -12,7 +12,7 @@ class MealsController < ApplicationController
     end
 
     def create
-        @meal = meal.new(meal_params)
+        @meal = Meal.new(meal_params)
         if @meal.save
             redirect_to meal_path(@meal)
         else
@@ -48,6 +48,6 @@ class MealsController < ApplicationController
     end
 
     def find_meal
-        @meal = meal.find(params[id])
+        @meal = Meal.find(params[id])
     end
 end
