@@ -25,6 +25,8 @@
     <%= f.number_field :height %> <br>
     <%= f.label :goal %> <br>
     <%= f.select :goal, ["Weight Loss", "Weight Gain", "Build Muscle"] %> <br>
+    <%= f.label :lifestyle %> <br>
+    <%= f.select :lifestyle, ["Not Active", "Somewhat Active", "Active", "Very Active"] %> <br>
     <%= f.submit 'Sign Up' %>
     
 <% end %>
