@@ -1,6 +1,6 @@
 class LogsController < ApplicationController
     before_action :logged_in?, only: [:index, :show, :edit, :update]
-    before_action :logged_in?, only: [:show, :edit, :update, :destroy]
+    before_action :find_log, only: [:show, :edit, :update, :destroy]
     
 
     def index
@@ -14,8 +14,8 @@ class LogsController < ApplicationController
 
     def create
         @log = Log.new(log_params)
-        if @brand.save
-            redirect_to brand_path(@brand)
+        if @log.save
+            redirect_to log_path(@log)
         else
             while @log.meal.length < 1
                 @log.meal.build
