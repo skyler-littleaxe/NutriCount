@@ -24,6 +24,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-google-oauth2'
+gem 'date_validator'
+
 
 
 # Use Active Storage variant
