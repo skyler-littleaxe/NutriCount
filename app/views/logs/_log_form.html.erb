@@ -1,0 +1,27 @@
+<%= form_with model: @log do |f| %>
+    <%= f.label :date %> <br>
+    <%= f.date_field :date %> <br>
+    <%= f.label :cheat_day %> <br>
+    <%= f.check_box :cheat_day %> <br>
+    <%= f.label :cal_goal %> <br>
+    <%= f.number_field :cal_goal, step: 1.0 %> <br>
+    <%= f.label :protein_goal %> <br>
+    <%= f.number_field :protein_goal, step: 1.0 %> <br>
+    <%= f.label :carb_goal %> <br>
+    <%= f.number_field :carb_goal, step: 1.0 %> <br>
+    <%= f.label :fat_goal %> <br>
+    <%= f.number_field :fat_goal, step: 1.0 %> <br>
+    <%= f.label :water_goal %> <br>
+    <%= f.number_field :water_goal, step: 1.0 %> <br>
+    <%= f.label :sugar_goal %> <br>
+    <%= f.number_field :sugar_goal, step: 1.0 %> <br>
+    Meal:<br>
+    <%= f.fields_for :meal do |meal_form| %>
+        <li>
+        <%= meal_form.label :meal_type %> <br>
+        <%= meal_form.date_field :meal_type %> <br>
+        
+        </li>
+
+
+<%= f.submit 'Create Log' %>

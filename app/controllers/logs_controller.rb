@@ -4,7 +4,7 @@ class LogsController < ApplicationController
     
 
     def index
-        @logs = @current_user.log.all
+        @logs = @current_user.logs.all
     end
 
     def new
