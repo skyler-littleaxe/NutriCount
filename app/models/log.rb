@@ -1,7 +1,7 @@
 class Log < ApplicationRecord
     belongs_to :user
-    has_many :logmeals
-    has_many :meals, through: :logmeals
+    has_many :log_meals
+    has_many :meals, through: :log_meals
     validates :date, presence: true
     validates :date, date: true
     validates :date, 

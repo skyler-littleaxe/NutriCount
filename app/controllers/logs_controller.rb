@@ -9,10 +9,7 @@ class LogsController < ApplicationController
 
     def new
         @log = Log.new
-        4.times do 
-            lg = @log.logmeals.build
-            lg.build_meals
-        end
+      
     end
 
     def create
@@ -51,7 +48,7 @@ class LogsController < ApplicationController
     private
 
     def log_params
-        params.require(:log).permit(:date, :cheat_day, :cal_goal, :protein_goal, :carb_goal, :fat_goal, :water_goal, :sugar_goal, :cal_goal, :protein_count, :carb_count, :fat_count, :water_count, :sugar_count, meal_ids:[], meal_attributes:[:meal_type, :meal_name, :cal_amount, :protein_amount, :carb_amount, :fat_amount, :water_amount, :sugar_amount, :cheat_meal, :meal_id])
+        params.require(:log).permit(:date, :cheat_day, :cal_goal, :protein_goal, :carb_goal, :fat_goal, :water_goal, :sugar_goal, :cal_goal, :protein_count, :carb_count, :fat_count, :water_count, :sugar_count, meal_ids:[], meal_attributes:[:meal_type, :meal_name, :cal_amount, :protein_amount, :carb_amount, :fat_amount, :water_amount, :sugar_amount, :cheat_meal])
     end
 
     def find_log
