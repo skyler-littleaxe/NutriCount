@@ -19,10 +19,10 @@
     <br>
     <p> Select Previously Submitted Meal
     <%= f.label :meal_id, "Meal" %>
-    <%= f.collection_select :meal_id, @current_user.log.meal.all, :id, :meal_name, prompt: true%>
+    <%= f.collection_select :meal_id, @current_user.logs.meals.all, :id, :meal_name, prompt: true%>
     <p>
     Or Add New Meal:<br>
-    <%= f.fields_for :meal do |meal_form| %>
+    <%= f.fields_for :meals do |meal_form| %>
         <li>
         <%= meal_form.label :meal_type %> <br>
         <%= meal_form.select :meal_type, ["Breakfast", "Lunch", "Dinner", "Snack", "Misc" ]  %> <br>
