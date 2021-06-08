@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_211716) do
+ActiveRecord::Schema.define(version: 2021_06_08_045235) do
+
+  create_table "log_meals", id: false, force: :cascade do |t|
+    t.integer "log_id", null: false
+    t.integer "meal_id", null: false
+  end
 
   create_table "logs", force: :cascade do |t|
     t.date "date"
@@ -31,11 +36,6 @@ ActiveRecord::Schema.define(version: 2021_06_04_211716) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_logs_on_user_id"
-  end
-
-  create_table "logs_meals", id: false, force: :cascade do |t|
-    t.integer "log_id", null: false
-    t.integer "meal_id", null: false
   end
 
   create_table "meals", force: :cascade do |t|

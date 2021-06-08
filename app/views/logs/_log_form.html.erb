@@ -17,8 +17,8 @@
     <%= f.number_field :sugar_goal, step: 1.0 %> <br>
     <br>
     <br>
-    <p> Select Previously Submitted Meal
-    <%= f.label :meal_id, "Meal" %>
+    <p> Select Previously Submitted Meal<br>
+    <%= f.label :meal_id, "By Name:" %>
     <%= f.collection_select :meal_id, Meal.all, :id, :meal_name, prompt: true%>
     <p>
     Or Add New Meal:<br>
@@ -27,19 +27,19 @@
         <%= meal_form.label :meal_type %> <br>
         <%= meal_form.select :meal_type, ["Breakfast", "Lunch", "Dinner", "Snack", "Misc" ]  %> <br>
         <%= meal_form.label :meal_name %> <br>
-        <%= meal_form.text :meal_name %> <br>
+        <%= meal_form.text_field :meal_name %> <br>
         <%= meal_form.label :cal_amount %> <br>
-        <%= meal_form.text :cal_amount %> <br>
+        <%= meal_form.text_field :cal_amount %> <br>
         <%= meal_form.label :protein_amount %> <br>
-        <%= meal_form.text :protein_amount %> <br>
+        <%= meal_form.text_field :protein_amount %> <br>
         <%= meal_form.label :carb_amount %> <br>
-        <%= meal_form.text :carb_amount %> <br>
+        <%= meal_form.text_field :carb_amount %> <br>
         <%= meal_form.label :fat_amount %> <br>
-        <%= meal_form.text :fat_amount %> <br>
+        <%= meal_form.text_field :fat_amount %> <br>
         <%= meal_form.label :water_amount %> <br>
-        <%= meal_form.text :water_amount %> <br>
+        <%= meal_form.text_field :water_amount %> <br>
         <%= meal_form.label :sugar_amount %> <br>
-        <%= meal_form.text :sugar_amount %> <br>
+        <%= meal_form.text_field :sugar_amount %> <br>
         <%= meal_form.label :cheat_meal %> <br>
         <%= meal_form.check_box :cheat_meal %> <br>
         </li>
