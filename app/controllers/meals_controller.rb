@@ -4,7 +4,7 @@ class MealsController < ApplicationController
     
 
     def index
-        @meals = @current_user.log.meal.all
+        @meals = @current_user.logs.meals.unique
     end
 
     def new
@@ -17,6 +17,7 @@ class MealsController < ApplicationController
             redirect_to meal_path(@meal)
         else
             render :new
+            flash[:message] = @meal.errors.full_messages.join(", ")
         end
     end
 

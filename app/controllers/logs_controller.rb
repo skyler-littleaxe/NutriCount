@@ -1,14 +1,16 @@
 class LogsController < ApplicationController
     before_action :logged_in?, only: [:new, :index, :show, :edit, :update]
     before_action :find_log, only: [:show, :edit, :update, :destroy]
+
     
 
     def index
-        @logs = @current_user.logs.all
+        @logs = @current_user.logs
     end
 
     def new
         @log = Log.new
+       
       
     end
 
@@ -17,10 +19,8 @@ class LogsController < ApplicationController
         if @log.save
             redirect_to log_path(@log)
         else
-            while @log.meals.length < 4
-                @log.meals.build
-            end
             render :new
+            
         end
     end
 
@@ -48,7 +48,7 @@ class LogsController < ApplicationController
     private
 
     def log_params
-        params.require(:log).permit(:date, :cheat_day, :cal_goal, :protein_goal, :carb_goal, :fat_goal, :water_goal, :sugar_goal, :cal_goal, :protein_count, :carb_count, :fat_count, :water_count, :sugar_count, meal_ids:[], meals_attributes:[:meal_type, :meal_name, :cal_amount, :protein_amount, :carb_amount, :fat_amount, :water_amount, :sugar_amount, :cheat_meal, :meal_id])
+        params.require(:log).permit(:date, :cheat_day, :cal_goal, :protein_goal, :carb_goal, :fat_goal, :water_goal, :sugar_goal, :cal_goal, :protein_count, :carb_count, :fat_count, :water_count, :sugar_count, meal_ids: [], meals_attributes:[:meal_type, :meal_name, :cal_amount, :protein_amount, :carb_amount, :fat_amount, :water_amount, :sugar_amount, :cheat_meal, :meal_id])
     end
 
     def find_log

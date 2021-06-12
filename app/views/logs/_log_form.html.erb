@@ -1,4 +1,11 @@
 <%= form_with model: @log do |f| %>
+    <% if @log.errors.any? %>
+    <ul>
+    <% @log.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
     <%= f.label :date %> <br>
     <%= f.date_field :date %> <br>
     <%= f.label :cheat_day %> <br>
